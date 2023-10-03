@@ -18,7 +18,23 @@ def is_sorted(lyst):
     return True
 
 def main():
-    pass
-  
+    mylyst = SList()
+    mylyst.insert(1)
+    mylyst.insert(10)
+    mylyst.insert(99)
+    mylyst.insert(8)
+    mylyst.insert(8)
+    mylyst.remove(8)
+    mylyst.insert(8)
+    mylyst.insert(8)
+    mylyst.insert(8)
+    mylyst.remove_all(8)
+    mylyst.size()
+
+    print(f"my list is =  {mylyst}")
+    print(mylyst.size())
+    print(mylyst.find(10))
+    print(str(mylyst))
+    print(mylyst[2])
 if __name__ == "__main__":
     main()
