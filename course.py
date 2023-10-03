@@ -19,7 +19,6 @@ class Course:
         self.name = name
         self.credit_hour = credit_hour
         self.grade = grade
-
     def number(self):
         """
         Returns the course number as an integer.
