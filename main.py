@@ -36,5 +36,9 @@ def main():
     print(mylyst.find(10))
     print(str(mylyst))
     print(mylyst[2])
+# constructor for Course:    def __init__(self, number=0, name="", credit_hour=0.0, grade=0.0)
+    course_instance = Course(2420,"Cs 2420",3.0,2.8)
+    print(course_instance)
+    print(course_instance.grade > 1)
 if __name__ == "__main__":
     main()
