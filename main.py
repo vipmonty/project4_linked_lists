@@ -55,14 +55,18 @@ def main():
 # constructor for Course:    def __init__(self, number=0, name="", credit_hour=0.0, grade=0.0)
     course_instance1 = Course(2420,"Cs 2420",3.0,3.2)
     course_instance2 = Course(2420,"Cs 2420",3.0,2.8)
-    courseList = [course_instance1,course_instance2]
+    course_instance3 = Course(2010, "Eg",3.0,3.2)
+    courseList = [course_instance1,course_instance2,course_instance3]
     answer = calculate_gpa(courseList)
     print(f" Gpa Calcultion:, {answer}")
     tester = SListNode()
     print(tester.value)
 
 
-    
+    lyst.insert(3.002)
+    lyst.remove(3.002)
+    print(lyst.remove("3.15"))
+
     print(lyst)
 
 

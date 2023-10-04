@@ -72,6 +72,10 @@ class Course:
             return True
         else: return False
 
+        if self.credit_hr != other.number:
+            return True
+        else: return False
+
     def __lt__(self, other):
         if self.number < other.number:
             return True
@@ -84,6 +88,10 @@ class Course:
             return True
         else: return False
 
+        if self.credit_hr < other.number:
+            return True
+        else: return False
+
     def __gt__(self,other):
         if self.number > other.number:
             return True
@@ -91,7 +99,14 @@ class Course:
         '''
         greater than operator
         '''
+        if self.name > other.number:
+            return True
+        else: return False
         # return self.number > other.number
+
+        if self.credit_hr > other.number:
+            return True
+        else: return False
 
     def __le__(self, other):
         if self.number <= other.number:
@@ -100,7 +115,14 @@ class Course:
         """
         Returns True if self's value is less than or equal to other's, False otherwise.
         """
+        if self.name <= other.number:
+            return True
+        else: return False
         # return self.number <= other.number
+
+        if self.credit_hr <= other.number:
+            return True
+        else: return False
 
     def __ge__(self,other):
         if self.number >= other.number:
@@ -109,7 +131,14 @@ class Course:
         '''
         Returns True if self's value is less greater than or equal to, False otherwise.
         '''
+        if self.name >= other.number:
+            return True
+        else: return False
         # return self.number >= other.number
+
+        if self.credit_hr >= other.number:
+            return True
+        else: return False
 
     def __mul__(self,other):
         if self.number is int:

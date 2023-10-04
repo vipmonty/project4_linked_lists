@@ -71,7 +71,7 @@ class SList:
                 return True
             current = current.next
 
-        return False
+        return False, type(key)
 
     def remove_all(self, key):
         """
