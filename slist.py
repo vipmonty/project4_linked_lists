@@ -1,32 +1,31 @@
 # SList.py
 
 class SListNode:
-    def __init__(self, item):
-        self.item = item
+    def __init__(self, value = None):
+        self.value = value
         self.next = None
 
 
 class SList:
     def __init__(self):
         self._head = None
+        self.size
 
-    def insert(self, item):
+    def insert(self, value):
         """
-        Inserts an item into the list at the appropriate location to maintain ascending order.
+        Inserts an value into the list at the appropriate location to maintain ascending order.
         """
-        new_node = SListNode(item)
-        if self._head is None or item < self._head.item:
-            # Insert at the beginning if the list is empty or the item is smaller than the _head
+        new_node = SListNode(value)
+        if self._head is None or value < self._head.value:
+            # Insert at the beginning if the list is empty or the value is smaller than the _head
             new_node.next = self._head
             self._head = new_node
         else:
             current = self._head
-            while current.next is not None and current.next.item < item:
+            while current.next is not None and current.next.value < value:
                 current = current.next
             new_node.next = current.next
             current.next = new_node
-
-
 
 
 
@@ -43,31 +42,31 @@ class SList:
 
     def find(self, key):
         """
-        Searches for the first occurrence of an item indicated by the key value in the list.
-        If found, the item is returned; returns None otherwise.
+        Searches for the first occurrence of an value indicated by the key value in the list.
+        If found, the value is returned; returns None otherwise.
         """
         current = self._head
         while current is not None:
-            if current.item == key:
-                return current.item
+            if current.value == key:
+                return current.value
             current = current.next
         return None
 
     def remove(self, key):
         """
-        Removes the first occurrence of an item indicated by the key from the list.
-        Returns True if an item was found and removed, False if not.
+        Removes the first occurrence of an value indicated by the key from the list.
+        Returns True if an value was found and removed, False if not.
         """
         if self._head is None:
             return False
 
-        if self._head.item == key:
+        if self._head.value == key:
             self._head = self._head.next
             return True
 
         current = self._head
         while current.next is not None:
-            if current.next.item == key:
+            if current.next.value == key:
                 current.next = current.next.next
                 return True
             current = current.next
@@ -76,17 +75,17 @@ class SList:
 
     def remove_all(self, key):
         """
-        Removes all occurrences of an item indicated by the key from the list.
+        Removes all occurrences of an value indicated by the key from the list.
         """
         if self._head is None:
             return
 
-        while self._head is not None and self._head.item == key:
+        while self._head is not None and self._head.value == key:
             self._head = self._head.next
 
         current = self._head
         while current is not None and current.next is not None:
-            if current.next.item == key:
+            if current.next.value == key:
                 current.next = current.next.next
             else:
                 current = current.next
@@ -101,7 +100,7 @@ class SList:
         result = '['
         current = self._head
         while current is not None:
-            result += str(current.item)
+            result += str(current.value)
             if current.next is not None:
                 result += ', '
             current = current.next
@@ -114,7 +113,7 @@ class SList:
         """
         current = self._head
         while current is not None:
-            yield current.item
+            yield current.value
             current = current.next
 
     def __getitem__(self, index):
@@ -128,7 +127,7 @@ class SList:
         count = 0
         while current is not None:
             if count == index:
-                return current.item
+                return current.value
             count += 1
             current = current.next
 
